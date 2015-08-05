@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsTree</title>
+<link rel="stylesheet" href="../code/dist/themes/default/style.min.css" />
+</head>
+<body>
+<p>demo:1</p>
+<div id="jstree_demo_div">
+	<ul>
+    	<li>Root node 1
+			<ul>
+        		<li>Child node 1</li>
+        		<li><a href="#">Child node 2</a></li>
+      		</ul>
+    	</li>
+    	<li>Root node 2</li>
+	</ul>
+</div>
+<p>demo:2</p>
+<div id="jstree_demo_div2">
+	<ul>
+    	<li>Root node 1
+			<ul>
+        		<li>Child node 1</li>
+        		<li><a href="#">Child node 2</a></li>
+      		</ul>
+    	</li>
+    	<li>Root node 2</li>
+	</ul>
+</div>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script> 
+<script src="../code/dist/jstree.min.js"></script>
+<script type="text/javascript">
+	
+	$(function () { $('#jstree_demo_div').jstree(); });
+
+	$('#jstree_demo_div').on("changed.jstree", function (e, data) {
+  console.log(data.selected);
+});
+
+/*demo2*/
+
+	$(function () {
+  $("#jstree_demo_div2").jstree({
+    "checkbox" : {
+      "keep_selected_style" : false
+    },
+    "plugins" : [ "checkbox" ]
+  });
+});
+/*
+demo2 end*/	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jsTree 说明文档</title>
+    <style type="text/css">
+    html{font-family: sans-serif;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%}body{margin: 0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display: block}audio,canvas,progress,video{display: inline-block;vertical-align: baseline}audio:not([controls]){display: none;height: 0}[hidden],template{display: none}a{background: transparent}a:active,a:hover{outline: 0}abbr[title]{border-bottom: 1px dotted}b,strong{font-weight: bold}dfn{font-style: italic}h1{font-size: 2em;margin: 0.67em 0}mark{background: #ff0;color: #000}small{font-size: 80%}sub,sup{font-size: 75%;line-height: 0;position: relative;vertical-align: baseline}sup{top: -0.5em}sub{bottom: -0.25em}img{border: 0}svg:not(:root){overflow: hidden}figure{margin: 1em 40px}hr{box-sizing: content-box;height: 0}pre{overflow: auto}code,kbd,pre,samp{font-family: monospace, monospace;font-size: 1em}button,input,optgroup,select,textarea{color: inherit;font: inherit;margin: 0}button{overflow: visible}button,select{text-transform: none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance: button;cursor: pointer}button[disabled],html input[disabled]{cursor: default}button::-moz-focus-inner,input::-moz-focus-inner{border: 0;padding: 0}input{line-height: normal}input[type="checkbox"],input[type="radio"]{box-sizing: border-box;padding: 0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height: auto}input[type="search"]{-webkit-appearance: textfield;box-sizing: content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance: none}fieldset{border: 1px solid #c0c0c0;margin: 0 2px;padding: 0.35em 0.625em 0.75em}legend{border: 0;padding: 0}textarea{overflow: auto}optgroup{font-weight: bold}table{border-collapse: collapse;border-spacing: 0}td,th{padding: 0}*{box-sizing: border-box}input,select,textarea,button{font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"}body{min-width: 1020px;font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";color: #333;background-color: #fff}a{color: #4183c4;text-decoration: none}a:hover,a:active{text-decoration: underline}hr,.rule{height: 0;margin: 15px 0;overflow: hidden;background: transparent;border: 0;border-bottom: 1px solid #ddd}hr:before,.rule:before{display: table;content: ""}hr:after,.rule:after{display: table;clear: both;content: ""}h1,h2,h3,h4,h5,h6{margin-top: 15px;margin-bottom: 15px;line-height: 1.1}h1{font-size: 30px}h2{font-size: 21px}h3{font-size: 16px}h4{font-size: 14px}h5{font-size: 12px}h6{font-size: 11px}small{font-size: 90%}blockquote{margin: 0}.lead{margin-bottom: 30px;font-size: 20px;font-weight: 300;color: #555}.text-muted{color: #999}.text-danger{color: #bd2c00}.text-emphasized{font-weight: bold;color: #333}ul,ol{padding: 0;margin-top: 0;margin-bottom: 0}ol ol,ul ol{list-style-type: lower-roman}ul ul ol,ul ol ol,ol ul ol,ol ol ol{list-style-type: lower-alpha}dd{margin-left: 0}tt,code{font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size: 12px}pre{margin-top: 0;margin-bottom: 0;font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace}#realtime .status{overflow: visible;position: absolute;top: -5px;left: 0;background: url("/public/images/github-status.png");width: 26px;height: 26px;display: block;margin: 0 5px 0 0}#realtime .up{background-position: 0 0}#realtime .problem{background-position: 0 -53px}#realtime .down{background-position: 0 -26px}.container{max-width: 920px;margin: 0 auto 20px auto}#header{background: #FAFAFA;background: -moz-linear-gradient(#FAFAFA, #EAEAEA);background: -webkit-linear-gradient(#FAFAFA, #EAEAEA);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#eaeaea')";border-bottom: 1px solid #CACACA;box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),0 0 10px rgba(0, 0, 0, 0.1)}#markup{padding: 3px}#markup article{padding-top: 30px}.markdown-body{overflow: hidden;font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;font-size: 16px;line-height: 1.6;word-wrap: break-word}.markdown-body>*:first-child{margin-top: 0 !important}.markdown-body>*:last-child{margin-bottom: 0 !important}.markdown-body .absent{color: #c00}.markdown-body .anchor{position: absolute;top: 0;left: 0;display: block;padding-right: 6px;padding-left: 30px;margin-left: -30px}.markdown-body .anchor:focus{outline: none}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{position: relative;margin-top: 1em;margin-bottom: 16px;font-weight: bold;line-height: 1.4}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{display: none;color: #000;vertical-align: middle}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{padding-left: 8px;margin-left: -30px;text-decoration: none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{display: inline-block}.markdown-body h1 tt,.markdown-body h1 code,.markdown-body h2 tt,.markdown-body h2 code,.markdown-body h3 tt,.markdown-body h3 code,.markdown-body h4 tt,.markdown-body h4 code,.markdown-body h5 tt,.markdown-body h5 code,.markdown-body h6 tt,.markdown-body h6 code{font-size: inherit}.markdown-body h1{padding-bottom: 0.3em;font-size: 2.25em;line-height: 1.2;border-bottom: 1px solid #eee}.markdown-body h1 .anchor{line-height: 1}.markdown-body h2{padding-bottom: 0.3em;font-size: 1.75em;line-height: 1.225;border-bottom: 1px solid #eee}.markdown-body h2 .anchor{line-height: 1}.markdown-body h3{font-size: 1.5em;line-height: 1.43}.markdown-body h3 .anchor{line-height: 1.2}.markdown-body h4{font-size: 1.25em}.markdown-body h4 .anchor{line-height: 1.2}.markdown-body h5{font-size: 1em}.markdown-body h5 .anchor{line-height: 1.1}.markdown-body h6{font-size: 1em;color: #777}.markdown-body h6 .anchor{line-height: 1.1}.markdown-body p,.markdown-body blockquote,.markdown-body ul,.markdown-body ol,.markdown-body dl,.markdown-body table,.markdown-body pre{margin-top: 0;margin-bottom: 16px}.markdown-body hr{height: 4px;padding: 0;margin: 16px 0;background-color: #e7e7e7;border: 0 none}.markdown-body ul,.markdown-body ol{padding-left: 2em}.markdown-body ul.no-list,.markdown-body ol.no-list{padding: 0;list-style-type: none}.markdown-body ul ul,.markdown-body ul ol,.markdown-body ol ol,.markdown-body ol ul{margin-top: 0;margin-bottom: 0}.markdown-body li>p{margin-top: 16px}.markdown-body dl{padding: 0}.markdown-body dl dt{padding: 0;margin-top: 16px;font-size: 1em;font-style: italic;font-weight: bold}.markdown-body dl dd{padding: 0 16px;margin-bottom: 16px}.markdown-body blockquote{padding: 0 15px;color: #777;border-left: 4px solid #ddd}.markdown-body blockquote>:first-child{margin-top: 0}.markdown-body blockquote>:last-child{margin-bottom: 0}.markdown-body table{display: block;width: 100%;overflow: auto;word-break: normal;word-break: keep-all}.markdown-body table th{font-weight: bold}.markdown-body table th,.markdown-body table td{padding: 6px 13px;border: 1px solid #ddd}.markdown-body table tr{background-color: #fff;border-top: 1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color: #f8f8f8}.markdown-body img{max-width: 100%;box-sizing: border-box}.markdown-body span.frame{display: block;overflow: hidden}.markdown-body span.frame>span{display: block;float: left;width: auto;padding: 7px;margin: 13px 0 0;overflow: hidden;border: 1px solid #ddd}.markdown-body span.frame span img{display: block;float: left}.markdown-body span.frame span span{display: block;padding: 5px 0 0;clear: both;color: #333}.markdown-body span.align-center{display: block;overflow: hidden;clear: both}.markdown-body span.align-center>span{display: block;margin: 13px auto 0;overflow: hidden;text-align: center}.markdown-body span.align-center span img{margin: 0 auto;text-align: center}.markdown-body span.align-right{display: block;overflow: hidden;clear: both}.markdown-body span.align-right>span{display: block;margin: 13px 0 0;overflow: hidden;text-align: right}.markdown-body span.align-right span img{margin: 0;text-align: right}.markdown-body span.float-left{display: block;float: left;margin-right: 13px;overflow: hidden}.markdown-body span.float-left span{margin: 13px 0 0}.markdown-body span.float-right{display: block;float: right;margin-left: 13px;overflow: hidden}.markdown-body span.float-right>span{display: block;margin: 13px auto 0;overflow: hidden;text-align: right}.markdown-body code,.markdown-body tt{padding: 0;padding-top: 0.2em;padding-bottom: 0.2em;margin: 0;font-size: 85%;background-color: rgba(0,0,0,0.04);border-radius: 3px}.markdown-body code:before,.markdown-body code:after,.markdown-body tt:before,.markdown-body tt:after{letter-spacing: -0.2em;content: "\00a0"}.markdown-body code br,.markdown-body tt br{display: none}.markdown-body del code{text-decoration: inherit}.markdown-body pre>code{padding: 0;margin: 0;font-size: 100%;word-break: normal;white-space: pre;background: transparent;border: 0}.markdown-body .highlight{margin-bottom: 16px}.markdown-body .highlight pre,.markdown-body pre{padding: 16px;overflow: auto;font-size: 85%;line-height: 1.45;background-color: #f7f7f7;border-radius: 3px}.markdown-body .highlight pre{margin-bottom: 0;word-break: normal}.markdown-body pre{word-wrap: normal}.markdown-body pre code,.markdown-body pre tt{display: inline;max-width: initial;padding: 0;margin: 0;overflow: initial;line-height: inherit;word-wrap: normal;background-color: transparent;border: 0}.markdown-body pre code:before,.markdown-body pre code:after,.markdown-body pre tt:before,.markdown-body pre tt:after{content: normal}.markdown-body kbd{display: inline-block;padding: 3px 5px;font-size: 11px;line-height: 10px;color: #555;vertical-align: middle;background-color: #fcfcfc;border: solid 1px #ccc;border-bottom-color: #bbb;border-radius: 3px;box-shadow: inset 0 -1px 0 #bbb}.codehilite{background: #ffffff}.codehilite .c{color: #999988;font-style: italic}.codehilite .err{color: #a61717;background-color: #e3d2d2}.codehilite .k{color: #000000;font-weight: bold}.codehilite .o{color: #000000;font-weight: bold}.codehilite .cm{color: #999988;font-style: italic}.codehilite .cp{color: #999999;font-weight: bold}.codehilite .c1{color: #999988;font-style: italic}.codehilite .cs{color: #999999;font-weight: bold;font-style: italic}.codehilite .gd{color: #000000;background-color: #ffdddd}.codehilite .gd .x{color: #000000;background-color: #ffaaaa}.codehilite .ge{color: #000000;font-style: italic}.codehilite .gr{color: #aa0000}.codehilite .gh{color: #999999}.codehilite .gi{color: #000000;background-color: #ddffdd}.codehilite .gi .x{color: #000000;background-color: #aaffaa}.codehilite .go{color: #888888}.codehilite .gp{color: #555555}.codehilite .gs{font-weight: bold}.codehilite .gu{color: #aaaaaa}.codehilite .gt{color: #aa0000}.codehilite .kc{color: #000000;font-weight: bold}.codehilite .kd{color: #000000;font-weight: bold}.codehilite .kp{color: #000000;font-weight: bold}.codehilite .kr{color: #000000;font-weight: bold}.codehilite .kt{color: #445588;font-weight: bold}.codehilite .m{color: #009999}.codehilite .s{color: #d14}.codehilite .na{color: #008080}.codehilite .nb{color: #0086B3}.codehilite .nc{color: #445588;font-weight: bold}.codehilite .no{color: #008080}.codehilite .ni{color: #800080}.codehilite .ne{color: #990000;font-weight: bold}.codehilite .nf{color: #990000;font-weight: bold}.codehilite .nn{color: #555555}.codehilite .nt{color: #000080}.codehilite .nv{color: #008080}.codehilite .ow{color: #000000;font-weight: bold}.codehilite .w{color: #bbbbbb}.codehilite .mf{color: #009999}.codehilite .mh{color: #009999}.codehilite .mi{color: #009999}.codehilite .mo{color: #009999}.codehilite .sb{color: #d14}.codehilite .sc{color: #d14}.codehilite .sd{color: #d14}.codehilite .s2{color: #d14}.codehilite .se{color: #d14}.codehilite .sh{color: #d14}.codehilite .si{color: #d14}.codehilite .sx{color: #d14}.codehilite .sr{color: #009926}.codehilite .s1{color: #d14}.codehilite .ss{color: #990073}.codehilite .bp{color: #999999}.codehilite .vc{color: #008080}.codehilite .vg{color: #008080}.codehilite .vi{color: #008080}.codehilite .il{color: #009999}
+    </style>
+    <style type="text/css">
+      .markdown-body hr{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC")}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="markup">
+        <article id="content" class="markdown-body">
+          <h2>jstree 说明文档</h2>
+<p><a href="https://www.jstree.com/">官方网站</a></p>
+<h3>Getting Started - everything at a glance</h3>
+<p><strong>1.Download jsTree</strong></p>
+<p>All the files you need are in the dist/ folder of the download.</p>
+<p><strong>2.Include a jsTree theme</strong></p>
+<p>Themes can be autloaded too, but it is best for performance to include the CSS file.</p>
+<div class="codehilite"><pre><span class="o">&lt;</span><span class="nt">link</span> <span class="nt">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;dist/themes/default/style.min.css&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+
+
+<p><strong>3.Setup a container</strong></p>
+<p>This is the element where you want the tree to appear, a <code>&lt;div&gt;</code> is enough. This example has <code>a</code> nested <code>&lt;ul&gt;</code> as there is no other <code>data source</code> configured (such as JSON).</p>
+<div class="codehilite"><pre>  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;jstree_demo_div&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+
+
+<p><strong>4.Include jQuery</strong></p>
+<p>jsTree requires 1.9.0 or greater in your webpage.</p>
+<div class="codehilite"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/libs/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+
+<p><strong>5.Include jsTree</strong></p>
+<p>For production include the minified version: dist/jstree.min.js, there is a development version too: dist/jstree.js</p>
+<div class="codehilite"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/jstree.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+
+<p><strong>6.Create an instance</strong></p>
+<p>Once the DOM is ready you can start creating jstree instances.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree_demo_div&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">();</span> <span class="p">});</span>
+</pre></div>
+
+
+<p><strong>7.Listen for events</strong></p>
+<p>jsTree uses events to notify you when something changes while users (or you) interact with the tree. So binding to jstree events is as easy binding to a click. There is a <strong>list of events</strong> and what information they provide in the API documentation.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree_demo_div&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;changed.jstree&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">selected</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p><strong>8.Interact with your instances</strong></p>
+<p>Once an instance is ready you can invoke methods on it. There is a list of available methods in the API documentation. The three examples below do exactly the same thing</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">select_node</span><span class="p">(</span><span class="s1">&#39;child_node_1&#39;</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">(</span><span class="s1">&#39;select_node&#39;</span><span class="p">,</span> <span class="s1">&#39;child_node_1&#39;</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">jstree</span><span class="p">.</span><span class="nx">reference</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">select_node</span><span class="p">(</span><span class="s1">&#39;child_node_1&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3>完整测试代码</h3>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>jsTree test<span class="nt">&lt;/title&gt;</span>
+  <span class="c">&lt;!-- 2 load the theme CSS file --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;dist/themes/default/style.min.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="c">&lt;!-- 3 setup a container element --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;jstree&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- in this example the tree is populated from inline HTML --&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Root node 1
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child_node_1&quot;</span><span class="nt">&gt;</span>Child node 1<span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>Child node 2<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Root node 2<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;button&gt;</span>demo button<span class="nt">&lt;/button&gt;</span>
+
+  <span class="c">&lt;!-- 4 include the jQuery library --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/libs/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="c">&lt;!-- 5 include the minified jstree source --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/jstree.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 6 create an instance when the DOM is ready</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">();</span>
+    <span class="c1">// 7 bind to events triggered on the tree</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;changed.jstree&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">selected</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="c1">// 8 interact with the tree - either way is OK</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">select_node</span><span class="p">(</span><span class="s1">&#39;child_node_1&#39;</span><span class="p">);</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">(</span><span class="s1">&#39;select_node&#39;</span><span class="p">,</span> <span class="s1">&#39;child_node_1&#39;</span><span class="p">);</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nx">jstree</span><span class="p">.</span><span class="nx">reference</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">select_node</span><span class="p">(</span><span class="s1">&#39;child_node_1&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<h2>Configuring instances</h2>
+<p>Creating an instance as described in the overview does not modify any of the defaults:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">();</span>
+</pre></div>
+
+
+<p>You can change the defaults for all future instances:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">jstree</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">themes</span><span class="p">.</span><span class="nx">variant</span> <span class="o">=</span> <span class="s2">&quot;large&quot;</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">();</span>
+</pre></div>
+
+
+<p>But most of the time you will want to change the defaults only for the instance that is being created. This is achieved by passing in a config object when creating the instance:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+  <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;wholerow&quot;</span><span class="p">,</span> <span class="s2">&quot;checkbox&quot;</span> <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>As seen in the previous example - there is one special key in the config object named plugins. It is an array of strings, which contain the names of the plugins you want active on that instance.</p>
+<p>All options that do not depend on a plugin are contained in a key of the config object named core, the options for each plugin are contained within a key with the same name as the plugin:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+  <span class="s2">&quot;core&quot;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;themes&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;variant&quot;</span> <span class="o">:</span> <span class="s2">&quot;large&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;checkbox&quot;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;keep_selected_style&quot;</span> <span class="o">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;wholerow&quot;</span><span class="p">,</span> <span class="s2">&quot;checkbox&quot;</span> <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>You can have a look at all the options and their default values. This list is what you can configure on each instance.</p>
+<p>For example, by default the tree allows multiple selection as stated in <code>$.jstree.defaults.core.multiple</code>, to overwrite that make sure your config object contains<code>"core" : { "multiple" : false }</code>. If you have multiple overrides for the same key (like <code>"core"</code> here), group them:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#jstree&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+  <span class="s2">&quot;core&quot;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;multiple&quot;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">&quot;animation&quot;</span> <span class="o">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2>Populating a tree using HTML</h2>
+<p><strong>Basic markup</strong></p>
+<p>jsTree can turn a regular unordered list into a tree. The minimal required markup is a <code>&lt;ul&gt;</code> node with some nested <code>&lt;li&gt;</code> nodes with some text inside.</p>
+<p>You should have a container wrapping the <code>&lt;ul&gt;</code> and create the instance on that container. Like so:</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#html1&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">();.</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;html1&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Root node 1<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Root node 2<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<p><img alt="1" src="data:image/png;base64,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"></p>
+<p><strong>Nodes with children</strong></p>
+<p>To create a node with child nodes simpy nest an <code>&lt;ul&gt;</code>.</p>
+<p>Internally jstree converts the text to a link, so if there already is a link in the markup jstree won't mind. Like <code>Child node 2</code>.
+Clicking on the link however will not direct the user to a new page, to do that - intercept the <code>changed.jstree</code> event and act accordingly.</p>
+<p>Keep reading for the section on handling events.</p>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;html1&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Root node 1
+      <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Child node 1<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Child node 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<p><img alt="1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUEAAACJCAIAAAA9oB0LAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAALaUlEQVR4nO3dUWgb9x0H8N9JZ7syEWGNy4goiWGjYhBvbLotWGNUebEDi/cwdYOk0MgvyR6iPMx5iVvw8lDlpRqsysPiF7uFOmWt+6I82IKCC5tdNomRyevmsA25GUoa2w3ZuVLlO93t4W+rjnWSpTul5//d94Mxyunur/PD1///naVvBF3XCQC45bH7BADAEmQYgG/IMADfkGEAviHDAHxDhgH4hgwD8A0ZBuAbMgzAN2QYgG/IMADfkGEAviHDAHxDhgH4hgwD8A0ZBuAbMgzAN2QYgG/IMADfkGEAviHDAHxDhgH4hgwD8A0ZBuCbaH0IXddZ0Tzq5gGsEwSBfWcP9mUpw5qm6bquaVq1WmUPEGMAKwRB8Hg8giB4vV72wOPZZ7FsPsMsutVqVVVVVVU1TUOGASxiofV4PKIoiqLo9XqJqHmMTWaYBVhVVUVRdF3v7e0VRXHfXxgAsC9N01RVLZfLmqZ1dXWxjU3CZTLDuq5Xq1VFUURR7O3tNTcIANTzeDzd3d3d3d2lUklRlH2X02ZmTnbpq6oqm4HNnioANNPb26vrOrtQbXKVajLDbCHt8/ksnCEA7MPn86mqyu4ZN9rH5BUsi7EoduBPUwDQiCiKzQNMpjPMJnfcxAJ4qjweD7t0bbaPiXH1HWZPDABatW/cMJEC8A0ZBuAbMgzANzszfOzY8za+OoAz2JnhTz/9r42vDuAMmIcB+IZ5GIBvdr7R6tix5y3G+D+5d/dseby5xh4o8mcDP3nZd/g7VsYHOPjszLD1APefGDJ+TntARJn3fnf6ld9beQmAg4/veZiIqqVNIvL2HiosZ+jJefjZZ/vm3v4VPzFeT8dPZ4bmUiN9dp8J8ITjeZiISHvgfYaqXx4qLGe+mpO1B7XnM++9aXTYejp++toSe3zo+Iux8auxUHvBySelUZrKjg2YOu3OkPPT8dGNMXtPAmxn/33pYDBo7vDalOt9ZnN7k/agFuCt8uOt8uMmhw9OzGWz2Ww2PR5IX/ztgmzuJOyST0rSqdEby3afB9jP5vvSpgNcw4JayzO1kN4n+UNDYcoXiuxflZWZ+HBYksLD8encOjXYmE+O3iK6NSpJkhRPrz85YD4pSYnZ+URsOCyFh8fni7Vnmg4eiV2bLdT2LKQTsYgkSZFYYqFI9QbGstns3MRgyz8mOJadGQ4Gg9/7/g+tj7Od2F1L6G7f4VYPrhQX0gvHo4NBIiJ54dpoJvTGfDa7ODWUi1+cXjHeODA2dZbo7FQ2m80aXr7mVvyxm/OL2anzhVdvbM/xDQef7U/MZ7MLNy8N+bfPaTF5bronns5mszPR++Pjs0YpBmBsy7D1ACvyZ/WPWZ5r8/DDtc8bHb507bQkSdKPR9PBN6ZjQSKi9cXZTOjsmQE/EQVGYtHV2aUV4437CY+EAz1EFBwIkSxXGg4u5zKZUOx8yE9EPUf8R4iISF66/UEkfiG0s+fyQm694SuB69mT4foAs2vjRt8b2So/Vh99sWej+uiL2leTY9n18PtXjy4t3N25GN4i6g/sTKvHXxi8v7HVYKMJRuNUZJn6+/dM5BVZpsyVUxJz8ZapVwPXsOG+NLsGvvPXv+zeyO5RN/pe78+3X/tu+Kf/e/jPHuUo0XZWa5EuKfdaPJn+aOLqwkvX06HUSICom6hQXKeBPiKi1btLR49carDRRIwbDb6xIRP59+z58zf/NB7uaf9FwH1smIdX6rR1eLlcJqLPP99eXla67peUe/3f/lb2w5lu3+GScq+k3Cs/fsS+WhgvMJJI+K/Hk/kK9YWjQ7nJt3IyERXT07PHo4NB44109IVBKhTauU41HnwgciIzmykSkbyytFSo7Xk7mVxcJyKqFPMz0/NYS0ND/H1+WN6UH649JCL10Re7s1pLddv8kYmb4cXxG7mKPzIxFS2MD0tSeDQTSt2MBdnT9Rv7hi5ckpM/k6TwWKsBMxwnEE287p98SQoPjy/R0UBtz5kYTb4cliRpOD59vz/o3ztYPilJ0ulrS+zmeDJv8kcHBxBM1GJVq9VyuVwul5977rmncU7NPVx7+MnfP/ny03d/8KOThX/9u8v/TSJ69hnlHyt3h35x+d7f5nbv/NEfP35l7A9f/0kCdMra2prP5/P5fOz/banHX7ms/9ATkxK7I/0ZZ2/RAOgY/jLs8/lOnjx5LxCYS79m97kA2I+/tXQTbyd/uWcLFtLAu33X0o7KMIDz7Jth/u5LA8BuyDAA35BhAL45IcPoxwQ3c0KG0Y8JbuaEDGMeBjdzQoYxD4Ob8fc+rXroqQY3c0KG0VMNbuaEtXRHroerpU1WVV1YzhSWM3c+fufOx+/c+fOH2Q9nWE91O4Plk4afB1xPx1mFXu2B8dMd0dnR4ODCPExEpnuqiYjklfnJycn0R6ub1H3kROT8hUvRsNXTsQPaqnnlhAxbvB427qne0bzmtpJPxS7mIqnUfDLQQyQXFmdn83I4YLx330gqO0JEdNBmx3xSGr1FRHTW7jOB9jlhLd2R+9KmeqqLt5Nv9U+k4qEAq77y94djY8Os4q5yt65i2nB5a9gv/RW0VcM+nJDhTv19uO2eavlubnkwEqoryiEi44ppgyGM+qVbGQpt1bDNCRm2OA+b76k2bJbdYVAxXc+wX7qVodBWDTuckOHm3dRPs6e6m6hQsJKIpr8FmkJbNWxzwj2t5t3UT7Gnum8gcuLVzNL6iPn/bdSwX7rFA9FWDUROmofb1Yme6sCZsbPF61dSuSJbK1eKuelkO2XQhv3SLR2ItmrY5oQMm7se7khPdc/A2PRUVE6NnpIkSYqcuzbbPTjQzpxq2C/dCrRVwzYn9GmZ+/sweqqBCw7sl65nbh5GTzU4gxMybG4eRk81OIMT1tIdh55qODhc0S9t/fPDAAeWK/qlEWBwMydkGH1a4GZOyDDmYXAzJ2QY8zC4mRMyjHkY3MwJGcY8DG7mhAxjHgY3c+/7tHZDvzTwywkZRr80uJkT1tLolzaCfmm3wDxMRC7vl66szCcnJzMfrW52Hzlx5teJ8eE2PscMtnNChtEvbY1cWA6cS80nAz2VQvrKufhMcPZcv90nBS1zwloa/dLW+qX7hsdi7Cfo6R8cCq0urRys3zHQnBMyjH7pjvVLV1bzuaMhU0WbYBcnZBj90h3ql67kbyRun7l6NtjgeTiQnJBh9Et3ol+6sjJ9MV6IvY8SW9444Z4W+qUt90tXVqYvXs5HZ1IjuCXNHSfMw+agX3qHnEucGy9eeCeJAHPJCfOwOfKmLG/KtNMvzTb6Dn+j/X7pdOr66KnljS06dDwUjp6/5KeNlgcIRBOv50ZfkpL+wQuXXghQy72a/sjEVPHK5WFpg44MXtjVL103mj8yMSMnf/Ny+PLG1qHjL47E43sm/cLCB6urdPn0BzsbBifmUuaXFvA1c0KfljnolwYuuKJf2hz0S4MzuDfD6JcGZ3DvWroJ9EvDweGKfmkAB3NFvzSAmyHDAHxDhgH4hgwD8A0ZBuAbMgzAN2QYgG9mMizs6PjZAMAe+8bN5Dzs8XgEwcz7QwCgdbquC4Lg8TTLqckMC4Lg9XoVRTF3OAC0QlEUr9fbfM1rci3t9XpFUWQfoweAp6RcLoui2DzGJjPs8XhEURQEoVQqWThDAGioVCoJgiCKIrt0bbSbyWtaTdOq1aqqqoqi6Lru8/m6urpwlwvAOl3XFUUpl8uCIHR1dbF5uMklsfn7UizGLMmqqmqapmka7nIBWMEWuWydy9LbPMBkJcNExELLwsweIMMAVrAMs1tO7EHzAJPFDDO6rrNBEGAA69g1aetvwcDfeAH4hvdaAvANGQbgGzIMwDdkGIBvyDAA35BhAL4hwwB8Q4YB+IYMA/ANGQbgGzIMwDdkGIBvyDAA3/4PcfL24kiSzT0AAAAASUVORK5CYII="></p>
+<p><strong>Setting initial state with classes</strong></p>
+<p>To make a node initially selected you can set the <code>jstree-clicked</code> class on the <code>&lt;a&gt;</code> element.</p>
+<p>Similarly you can set the <code>jstree-open</code> class on any <code>&lt;li&gt;</code> element to make it initially extended, so that its children are visible.</p>
+<p>It is a good idea to give your nodes unique IDs by adding the <code>id</code> attribute to any <code>&lt;li&gt;</code> element. This will be useful if you need to sync with a backend as you will get the ID back in any events jstree triggers.</p>
+<div class="codehilite"><pre>…
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;jstree-open&quot;</span> <span class="na">id=</span><span class="s">&quot;node_1&quot;</span><span class="nt">&gt;</span>Root<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;jstree-clicked&quot;</span><span class="nt">&gt;</span>Child<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+…
+</pre></div>
+
+
+<p><img alt="1" src="data:image/png;base64,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"></p>
+<p><strong>Setting initial state with data attribute</strong></p>
+<p>You can also set the state on a node using a <code>data-jstree</code> attribute.</p>
+<p>You can use any combination of the following: <code>opened</code>, <code>selected</code>, <code>disabled</code>, <code>icon</code>.</p>
+<p>Specifying an address (anything containing a <code>/</code>) will display that image as the node icon. Using a string will apply that class to the <code>&lt;i&gt;</code> element that is used to represent the icon.
+For example if you are using Twitter Bootstrap you can use <code>"icon" : "glyphicon glyphicon-leaf"</code>to display a leaf icon.</p>
+<div class="codehilite"><pre><span class="nt">&lt;li</span> <span class="na">data-jstree=</span><span class="s">&#39;{&quot;opened&quot;:true,&quot;selected&quot;:true}&#39;</span><span class="nt">&gt;</span>Root
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">data-jstree=</span><span class="s">&#39;{&quot;disabled&quot;:true}&#39;</span><span class="nt">&gt;</span>Child<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">data-jstree=</span><span class="s">&#39;{&quot;icon&quot;:&quot;//jstree.com/tree.png&quot;}&#39;</span><span class="nt">&gt;</span>
+      Child<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">data-jstree=</span><span class="s">&#39;{&quot;icon&quot;:&quot;glyphicon glyphicon-leaf&quot;}&#39;</span><span class="nt">&gt;</span>
+      Child<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</pre></div>
+
+
+<p><img alt="1" src="data:image/png;base64,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"></p>
+<p><strong>Loading with AJAX</strong></p>
+<p>You can also use AJAX to populate the tree with HTML your server returns. The format remains the same as the above, the only difference is that the HTML is not inside the container, but returned from the server.</p>
+<p>To take advantage of this option you need to use the <code>$.jstree.defaults.core.data</code> config option.</p>
+<p>Just use a standard jQuery-like AJAX config and jstree will automatically make an AJAX request populate the tree with the response.</p>
+<p>Add a class of <code>jstree-closed</code> to any LI node you return and do not nest an UL node and jstree will make another AJAX call as soon as the user opens this node.</p>
+<p>In addition to the standard jQuery ajax options here you can supply functions for <code>data</code> and <code>url</code>, the functions will be run in the current instance's scope and a param will be passed indicating which node is being loaded, the return value of those functions will be used as URL and data respectively.</p>
+<div class="codehilite"><pre>$(&#39;#tree&#39;).jstree({
+&#39;core&#39; : {
+  &#39;data&#39; : {
+    &#39;url&#39; : &#39;ajax_nodes.html&#39;,
+    &#39;data&#39; : function (node) {
+      return { &#39;id&#39; : node.id };
+    }
+  }
+});
+
+// Example response:
+<span class="nt">&lt;ul&gt;</span>
+<span class="nt">&lt;li&gt;</span>Node 1<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;jstree-closed&quot;</span><span class="nt">&gt;</span>Node 2<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+
+
+<p><img alt="1" src="data:image/png;base64,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"></p>
+<h2>Populating the tree using JSON</h2>
+<p>The format</p>
+<p>jsTree needs a specific format to work with JSON. In the standard syntax no fields are required - pass only what you need. Keep in mind you will be able to access any additional properties you specify - jsTree won't touch them and you will be able to use them later on.</p>
+<p>To change the icon of the node use the <code>icon</code> property. Specifying a string containing a / will display that image as the node icon. Using any other string will apply that class to the <code>&lt;i&gt;</code> element that is used to represent the icon. You can use boolean <code>false</code> to make jsTree render the node with no icon.</p>
+<p>You can set the state on a node using the <code>state</code> property. Use any combination of the following: <code>opened</code>, <code>selected</code>, <code>disabled</code>.</p>
+<p>Both <code>li_attr</code> and <code>a_attr</code> are passed directly to jQuery's attr function.</p>
+<p>When using AJAX set <code>children</code> to boolean <code>true</code> and jsTree will render the node as closed and make an additional request for that node when the user opens it.</p>
+<p>Any nested children should either be objects following the same format, or plain strings (in which case the string is used for the node's text and everything else is autogenerated).</p>
+<div class="codehilite"><pre><span class="c1">// Expected format of the node (there are no required fields)</span>
+<span class="p">{</span>
+  <span class="nx">id</span>          <span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="c1">// will be autogenerated if omitted</span>
+  <span class="nx">text</span>        <span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="c1">// node text</span>
+  <span class="nx">icon</span>        <span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="c1">// string for custom</span>
+  <span class="nx">state</span>       <span class="o">:</span> <span class="p">{</span>
+    <span class="nx">opened</span>    <span class="o">:</span> <span class="kr">boolean</span>  <span class="c1">// is the node open</span>
+    <span class="nx">disabled</span>  <span class="o">:</span> <span class="kr">boolean</span>  <span class="c1">// is the node disabled</span>
+    <span class="nx">selected</span>  <span class="o">:</span> <span class="kr">boolean</span>  <span class="c1">// is the node selected</span>
+  <span class="p">},</span>
+  <span class="nx">children</span>    <span class="o">:</span> <span class="p">[]</span>  <span class="c1">// array of strings or objects</span>
+  <span class="nx">li_attr</span>     <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// attributes for the generated LI node</span>
+  <span class="nx">a_attr</span>      <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// attributes for the generated A node</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><strong>Alternative JSON format</strong></p>
+<p>If you do not want to use the nested <code>children</code> approach, you can use the alternative syntax where each node object has two required fields: <code>id</code> &amp; <code>parent</code> and no <code>children</code> property (everything else remains the same).</p>
+<p>jsTree will automatically build the hierarchy. To indicate a node should be a root node set its <code>parent</code> property to <code>"#"</code>.</p>
+<p>This should be used mainly when you render the whole tree at once and is useful when data is stored in a database using adjacency.</p>
+<div class="codehilite"><pre><span class="c1">// Alternative format of the node (id &amp; parent are required)</span>
+<span class="p">{</span>
+  <span class="nx">id</span>          <span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="c1">// required</span>
+  <span class="nx">parent</span>      <span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="c1">// required</span>
+  <span class="nx">text</span>        <span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="c1">// node text</span>
+  <span class="nx">icon</span>        <span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="c1">// string for custom</span>
+  <span class="nx">state</span>       <span class="o">:</span> <span class="p">{</span>
+    <span class="nx">opened</span>    <span class="o">:</span> <span class="kr">boolean</span>  <span class="c1">// is the node open</span>
+    <span class="nx">disabled</span>  <span class="o">:</span> <span class="kr">boolean</span>  <span class="c1">// is the node disabled</span>
+    <span class="nx">selected</span>  <span class="o">:</span> <span class="kr">boolean</span>  <span class="c1">// is the node selected</span>
+  <span class="p">},</span>
+  <span class="nx">li_attr</span>     <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// attributes for the generated LI node</span>
+  <span class="nx">a_attr</span>      <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// attributes for the generated A node</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><strong>Using JSON</strong></p>
+<p>To populate the tree with a JSON object you need to use the <code>$.jstree.defaults.core.data</code> config option.</p>
+<p>The expected format is an array of nodes, where each node should be an object as described above or a simple string (in which case the string is used for the node's text property and everything else is autogenerated). Any nested nodes are supplied in the same manner in the <code>children</code> property of their parent.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#using_json&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span> <span class="s1">&#39;core&#39;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span> <span class="o">:</span> <span class="p">[</span>
+       <span class="s1">&#39;Simple root node&#39;</span><span class="p">,</span>
+       <span class="p">{</span>
+         <span class="s1">&#39;text&#39;</span> <span class="o">:</span> <span class="s1">&#39;Root node 2&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;state&#39;</span> <span class="o">:</span> <span class="p">{</span>
+           <span class="s1">&#39;opened&#39;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="s1">&#39;selected&#39;</span> <span class="o">:</span> <span class="kc">true</span>
+         <span class="p">},</span>
+         <span class="s1">&#39;children&#39;</span> <span class="o">:</span> <span class="p">[</span>
+           <span class="p">{</span> <span class="s1">&#39;text&#39;</span> <span class="o">:</span> <span class="s1">&#39;Child 1&#39;</span> <span class="p">},</span>
+           <span class="s1">&#39;Child 2&#39;</span>
+         <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span> <span class="p">});</span>
+</pre></div>
+
+
+<p><strong>Using the alternative JSON format</strong></p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#using_json_2&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span> <span class="s1">&#39;core&#39;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span> <span class="o">:</span> <span class="p">[</span>
+       <span class="p">{</span> <span class="s2">&quot;id&quot;</span> <span class="o">:</span> <span class="s2">&quot;ajson1&quot;</span><span class="p">,</span> <span class="s2">&quot;parent&quot;</span> <span class="o">:</span> <span class="s2">&quot;#&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span> <span class="o">:</span> <span class="s2">&quot;Simple root node&quot;</span> <span class="p">},</span>
+       <span class="p">{</span> <span class="s2">&quot;id&quot;</span> <span class="o">:</span> <span class="s2">&quot;ajson2&quot;</span><span class="p">,</span> <span class="s2">&quot;parent&quot;</span> <span class="o">:</span> <span class="s2">&quot;#&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span> <span class="o">:</span> <span class="s2">&quot;Root node 2&quot;</span> <span class="p">},</span>
+       <span class="p">{</span> <span class="s2">&quot;id&quot;</span> <span class="o">:</span> <span class="s2">&quot;ajson3&quot;</span><span class="p">,</span> <span class="s2">&quot;parent&quot;</span> <span class="o">:</span> <span class="s2">&quot;ajson2&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span> <span class="o">:</span> <span class="s2">&quot;Child 1&quot;</span> <span class="p">},</span>
+       <span class="p">{</span> <span class="s2">&quot;id&quot;</span> <span class="o">:</span> <span class="s2">&quot;ajson4&quot;</span><span class="p">,</span> <span class="s2">&quot;parent&quot;</span> <span class="o">:</span> <span class="s2">&quot;ajson2&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span> <span class="o">:</span> <span class="s2">&quot;Child 2&quot;</span> <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span> <span class="p">});</span>
+</pre></div>
+
+
+<p><strong>Using AJAX</strong></p>
+<p>You can also use AJAX to populate the tree with JSON your server returns. The format remains the same as the above, the only difference is that the JSON is not inside the config object, but returned from the server.</p>
+<p>To take advantage of this option you need to use the <code>$.jstree.defaults.core.data</code> config option.</p>
+<p>Just use a standard jQuery-like AJAX config and jstree will automatically make an AJAX request populate the tree with the response.</p>
+<p>In addition to the standard jQuery ajax options here you can supply functions for <code>data</code> and <code>url</code>, the functions will be run in the current instance's scope and a param will be passed indicating which node is being loaded, the return value of those functions will be used as URL and data respectively.</p>
+<p>If you do not return correct json headers from the server, at least set the <code>dataType</code> jQuery AJAX option to <code>"json"</code>.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+<span class="s1">&#39;core&#39;</span> <span class="o">:</span> <span class="p">{</span>
+  <span class="s1">&#39;data&#39;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;url&#39;</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="s1">&#39;#&#39;</span> <span class="o">?</span> 
+        <span class="s1">&#39;ajax_roots.json&#39;</span> <span class="o">:</span> 
+        <span class="s1">&#39;ajax_children.json&#39;</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;data&#39;</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="s1">&#39;id&#39;</span> <span class="o">:</span> <span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="p">};</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p><strong>Using a function</strong></p>
+<p>You can supply a function too. That function will receive two arguments - the node being loaded and a callback function to call with the children for that node once you are ready.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s1">&#39;core&#39;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;data&#39;</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">cb</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span>
+              <span class="p">[</span><span class="s1">&#39;Root 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Root 2&#39;</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}});</span>
+</pre></div>
+
+
+<h2>Listening for events</h2>
+<p>jsTree triggers various events on the container. You can review the list of all events to know what to listen for.</p>
+<p>To get more information about the event inspect its <code>data</code> argument.</p>
+<p>In most cases where a node is involved you will get the whole node object passed in. If you get an ID string somewhere and want to inspect the node just use <code>.get_node()</code>.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">)</span>
+  <span class="c1">// listen for event</span>
+  <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;changed.jstree&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">r</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span><span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">selected</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">r</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">get_node</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">selected</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">text</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#event_result&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Selected: &#39;</span> <span class="o">+</span> <span class="nx">r</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">));</span>
+  <span class="p">})</span>
+  <span class="c1">// create the instance</span>
+  <span class="p">.</span><span class="nx">jstree</span><span class="p">();</span>    
+</pre></div>
+
+
+<h2>Invoking methods on an instance</h2>
+<p>To invoke a method on an instance you must obtain a reference of the instance and invoke the method. The example shows how to obtain a reference and invoke a method.</p>
+<p>Check the API for a list of available methods.</p>
+<div class="codehilite"><pre><span class="c1">// 3 ways of doing the same thing</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">select_node</span><span class="p">(</span><span class="s1">&#39;mn1&#39;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">jstree</span><span class="p">(</span><span class="s1">&#39;select_node&#39;</span><span class="p">,</span> <span class="s1">&#39;mn2&#39;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">jstree</span><span class="p">.</span><span class="nx">reference</span><span class="p">(</span><span class="s1">&#39;#jstree&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">select_node</span><span class="p">(</span><span class="s1">&#39;mn3&#39;</span><span class="p">);</span>
+</pre></div>
+
+
+<h2><a href="https://www.jstree.com/api/">API文档</a></h2>
+<h2>Plugins?</h2>
+<p>jsTree has some functionality moved out of the core so you can only use it when you need it. To enable a plugin use the <code>plugins</code> config option and add that plugin's name to the array.</p>
+<p>For example enabling all the plugins can be done this way:</p>
+<div class="codehilite"><pre><span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;checkbox&quot;</span><span class="p">,</span> <span class="s2">&quot;contextmenu&quot;</span><span class="p">,</span> <span class="s2">&quot;dnd&quot;</span><span class="p">,</span> <span class="s2">&quot;massload&quot;</span><span class="p">,</span> <span class="s2">&quot;search&quot;</span><span class="p">,</span> <span class="s2">&quot;sort&quot;</span><span class="p">,</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;types&quot;</span><span class="p">,</span> <span class="s2">&quot;unique&quot;</span><span class="p">,</span> <span class="s2">&quot;wholerow&quot;</span> <span class="p">]</span>
+</pre></div>
+
+
+<p>Here is a quick overview for each one.</p>
+<h3>Checkbox plugin</h3>
+<p>This plugin renders checkbox icons in front of each node, making multiple selection much easier. 
+It also supports tri-state behavior, meaning that if a node has a few of its children checked it will be rendered as undetermined, and state will be propagated up. You can also fine tune the cascading options with the cascade config option.
+Keep in mind when cascading checkbox will check even disabled nodes.</p>
+<p>Undetermined state is automatically calculated, but if you are using AJAX and loading on demand and want to render a node as underemined pass <code>"undetermined" : true</code> in its state.</p>
+<p>You can find all the checkbox plugin config options in the API.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins1&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s2">&quot;checkbox&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;keep_selected_style&quot;</span> <span class="o">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;checkbox&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3>Contextmenu plugin</h3>
+<p>This plugin makes it possible to right click nodes and shows a list of configurable actions in a menu.</p>
+<p>You can find all the contextmenu plugin config options in the API.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins2&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+     <span class="s2">&quot;core&quot;</span> <span class="o">:</span> <span class="p">{</span>
+       <span class="c1">// so that create works</span>
+       <span class="s2">&quot;check_callback&quot;</span> <span class="o">:</span> <span class="kc">true</span>
+     <span class="p">},</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;contextmenu&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3>Drag &amp; drop plugin</h3>
+<p>This plugin makes it possible to drag and drop tree nodes and rearrange the tree.</p>
+<p>You can find all the dnd plugin config options in the API.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins3&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s2">&quot;core&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;check_callback&quot;</span> <span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;dnd&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3>Massload plugin</h3>
+<p>This plugin makes it possible to load nodes in a single request (used with lazy loading).</p>
+<p>You can find all the massload plugin config options in the API.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins10&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s2">&quot;core&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;data&quot;</span> <span class="o">:</span> <span class="p">{</span> <span class="p">..</span> <span class="nx">AJAX</span> <span class="nx">config</span> <span class="p">..</span> <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;massload&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;url&quot;</span> <span class="o">:</span> <span class="s2">&quot;/some/path&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;data&quot;</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">nodes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="s2">&quot;ids&quot;</span> <span class="o">:</span> <span class="nx">nodes</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="p">};</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;massload&quot;</span><span class="p">,</span> <span class="s2">&quot;state&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3>Search plugin</h3>
+<p>This plugin adds the possibility to search for items in the tree and even to show only matching nodes.</p>
+<p>You can find all the search plugin config options in the API.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins4&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;search&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+  <span class="kd">var</span> <span class="nx">to</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#plugins4_q&#39;</span><span class="p">).</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">to</span><span class="p">)</span> <span class="p">{</span> <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">to</span><span class="p">);</span> <span class="p">}</span>
+    <span class="nx">to</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#plugins4_q&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#plugins4&#39;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">search</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">250</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p><img alt="6" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUMAAAEbCAIAAADPjHHKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAS70lEQVR4nO3df0zb953H8beNMXEKySWhScO6gpZeadXQ28Z31+HbVDKpAbWlJ5XeprbTCrqp6R8hujuaP0KnpblTyLSWbTeqKYkmwaY1rbqmuo0uIlTbqK4H0Wp062BtyTWVaVLyA0iUmuCAjX1/fAMlxDb21yT29+3nQxFyvtgfPkR58fl+vtgvO6LRqACwOWemJwBgGZBkQAOSDGhAkgENSDKgAUkGNCDJgAYkGdCAJAMakGRAA5IMaECSAQ1IMqABSQY0cGV6AjfI2NjYJ598Mjk5OTs7m+m5IPNWr15dWlq6Zs2aTE9k2Thy4fXJY2Njw8PDt99+e3FxscuVKz+8kMCZM2c+/PDDu+++W02Yc+K/9alTp+68887i4uJMTwTZ4pZbbhERv9+vJsk5sU/+9NNPiTEWKS4uvnTpUqZnsWxyIsnAtVwul6aLJiQZ0IAkAxqQZEADkgxoQJIBDUgyoAFJBjQgyYAGJBnQgCQDGpBkQAOSDGhAkgENSDKgAUkGNCDJgAYkGdCAJAMakGRAA5IMaECSAQ1IMqABSQY0IMnIUeFw2OnU8/9fz3eSwKpVq8bHxzM9C2SX8fHxwsLCTM9i2eREkm+99dYPPvhgfHw8HA5nei7ICuY7vJWVlWV6IssmJ96rUUTGxsZOnTo1OTkZiUQyPRdk3qpVq8rKytS8vZvkTpIB3XLi7BpQjyQDGpBkQAOSDGhAkgENSDKgAUkGNCDJgAYkGdCAJAMauJZllGg0aj7rk+d+AulzOBzmR/NGMtJNciQSiUajkUhkdnbWvEGYgXQ4HA6n0+lwOPLy8swbybyOOq0kmwGenZ0Nh8PhcDgSiZBkIE1mdJ1Op8vlcrlceXl5IrJkmK0n2YxxOBwOhULRaHTlypUul0tTCQOQKZFIJBwOB4PBSCSSn59vHkwcLutJjkajs7OzoVDI5XKtXLnS8jgAFnE6nW632+12T01NhUKhZE6wLS6h5pY4HA6bq7G1QQAktnLlymg0am5dE+9brSfZPLX2eDzWRgCQDI/HEw6HzSvKCe5mfVtrhtnlWp7fYwGIyeVyLRljSSfJ5nLPJS7gunI6neZmdom7WRs9OsfawwEkL5m4saICGpBkQAOSDGiQ4SvPt91268cfn1rybifOnv9o7OKMa4XDkdM/eqLRSF7o8t+uX71pw9pMzwXZJcNJTibGIvJ/5y661pV48t3JvzREpWg0GgnNfDQ2SpKxSIaXuNtuuzWZu83mr3DmfIzFfG59vnvGtSLTE0HWyXCSk1yTHQ4nMTY5HI4c32IgJnvskxMoHXll0ZGLk2PmjVDgbMGXnjhfcFc64wO2YI99cjylI6+Ubd4a+3ORMyLS8+v/LHhgfzpfArAF26/JIjI7NSkieSsL/UM9cvWavHZt8fkjT9snzOPvPFv7bnX3d+8vzvRMYDP2XpNFRCJn8lbI7OVC/1DPZ+tz5Mz853t+/dNYDxt/59naVwfM24U3VzXUNzVsSu168OBvahvlx75/5OQdWSArrl2Xl5dbe/j88pu3YvLKociZ+RjPBC/OBC8meHh5c/fz3b7nu7vqN3TtP9AbtDYJIAtkfk22HON5M8GLbs/q+VSbR1IZoGjTfV75gf+8yOdEZGb4v/fsODIwIWuq7t+1+xv3FEusgyP7G98WkX813hYpb150Pjz4m9rGcNNeefNHvg8Cnvt2b99Vc2W9Tzi4686q9Rfkygu+Z/zv7H/ut0eGLt+0+avNrfXeEuv/QMgBGV6Ty8vL/+5LX0l/nCvRXXBS7fasTvrBo0Nv9t78QNXnREQCQ22Nf77nhe93+/b9ZOtHz277w4nYB0uf7viayNd+7Hu+2xdzW3viRNGWHx7d192x5eSzR/oCknDw/s+3fr/b9x8/3P7Fm8xHT3+w//E/uptaun3P/6z+wr6W/rNW/2mQGzKZ5PRjHAqcvfa2mer5Zfnc2Pl4Dx9uq91Za+x8uNG36YWmb5WLiJzvO/ZW5dfvr/CIyIa6LQ+OHPMNxz64lPL7vWvdIlJ+2z1y+dJ03MEnB/78VuWWb1Z6RMS9bsUaERGZ7PcdqX7g25Vz9xz661/GU/3HQU7JWJKvjbG5Z473MZ6Z4MXwhUuLDoYvXJr/k2gOzd3Pd/t2Nm0c7js+t0meESlbM3fp6+ZNVRcuzMQ5aEGscWYCl6Vs/aKLbTOBy9Lzi0eNnbXGzlpj/39Z+mrIJZnZJ5t743f/952FB83r2DE/HhmOcXJ507Hv3eN98NNzHxSENopcSex8sKdCJ5OczPoHWx/pe/T1Nyu/e3+JiFvEf+G8lK4VERk70b9mzfY4By2EOd7gE4FJkcJF93zkn3/bcqc79S+CnJSZNXl4TjB4ybyR0sOng0EROX/+ygnndP7pqdDJsts3+X5/yO1ZPRU6ORU6Gbx4wfyTxHglX9nVuuKnTb95f1rWer9630DPqwNBETnb9cfflX7VKI99UDaWVMrYqdEU5h178Iq77+w59taoiARP9A+fmr/nG7/d3/epiMj0+fcP/aGXs2skYo/nXS8ydSlwYfyciIQvXFqY2Plsp6yw+ls/9A7/4MUTM0WbmzuqTrb8e62x6196vrD3wDc2iUjMg8Vf/Pb24P6Hd9Z6O5ONWcxxSqp27V3xq0d31tW85JO1G+bveWiLHPxJnbGztubnr55ev6nI4reG3OCw1sU1OzsbDAaDweDNN9+czpdP8jleR4bPetZtmP/rhfFzI8Pv3XXxlS///b3+D0/kF20QkbUrQu8PH9/6TztO/qV74WPfevvY5598NZ1JZpvgxNkHyjcsfT9oMTY25vF4PB6P+c4yMWX+98kWHrXypqsWKPOq9dnA8kwJsCNbPu+6wOO568v3nhst6f7d967HrADbseWaLCIFHs/nN90hmxafNv/qZ99cdETZqTUQky3X5ATILXKTTa5dU5E/JxqNRqNLvB0BclBWvBZqSY6ZqUhohre8MBv58kO8aguL2WOfXH7LmhPnPqElNxqNOGeCd2z4m0xPBFnHHvvkL6xf84X1a9IfB9DKJvvkGzUOYFP22CffsHEAm2JNBjSwxz75Bozz0UCi3uyKrz/hWU31HrKXPa5dX+9xPhpYuje79jt2qdpFLmKf/JnZqUmzOts/1OMf6nn32EvvHnvp3T/93vf7Q2vXFnf/8ulUBhtsM4y2wWsOj3c1GU1d4wtuxP70slje0ZDVWJPnWOzNFhEJDB89ePBg11sjk+Jet7n6yae213vTnU4mBAY7mxonmn3NFZmeCVLGPlkkXm/2nMSdu9OD7Q3bBqrb24+2lRSIBPx9hw8PBuKV2hbXtfvqRESybaUcbDMaXxYReSzTM4ElXLv+jJnYRb3ZS1Vnj77R9ouy3e1NlSUFIiJSVOZtaK4xW3Onjx9tbajxGt6alqNXWoJinvBODx9qqvEaRnXDnsP+a7/EYJthtB6+ZqgFD/TWNHUOjCcabdrf1dpQbRhGdUNrb6zGoopmn8/Xvbsq4TeL7MU++Sop92YHjg8MVVVXxq7mGRguajhwtM/X8aT/2Rd74zUhBHr3NB4uaz3q8/Ue2L41TslPrKECvXsaeypfOOrz9XVsHWja1jkcb7TpvrbHOwuaunw+36H60y0th1NpH4MtsCaLpNObPR0ISFlZnPdj89Z5SwpEpLyiUgKB6dh3Cgz09FQ2PFlZJCIF64rWJT3UeN/hnsrHHqooEpGSuob6kcP9w7FHC/S/8Xp101OVc/cc6h3ItpN7pEvVmpzMx3is9ma7Rfz+dHKR8GdBQjMiZSVzDyy9o+r0xEzs0aYDAel5Zoth2vZyGrNFtlJ17TqZj9f60xtp9GYXV1Rvfranf7yuzvL7pLpFJiYCIimXZ7pF/KPjUlEsIjJyvH/juu1xRnOLPPLT/2nxFlidI7KeqjU5VcFl6M0ueaj5sdF9z7QPjJpnz9OjA51tR1NYpIsrqjf3HO4ZFZHAcH+/P/kHeuu3Dhz8xUBAREa7Og+X1leVxx6t2Fu/9Y22tr5xc4KDhzpTmSBsIaf3yYHJwLmxdHuzCyqaOzvqA+2NWwzDMKof33PYXVWRyvpaUt+6t+jgo4a3pqVfNqbwloxF1bs76v0tNYbhbeypbD/QUB5vtKLq3Yca5OATXsMwapo6T5eVXzPBwTbDMGr39MvLjUbM57Qgu9mj7/o6jXNu7Nx7f33v8sfJ9mZ/p5mSMGSA2r7r5RqnqJDebCiR08/x8ng8995778mSku4uerNhbxk+u85av2xb3JvNqTUyJZmz65zeJwO2kEySc/raNaBGTv8+GVCDNRnQgDUZ0IA1GdCANRnQgDUZ0CCnn+O1EH3XsLWcft71PPquYXfskz9D3zXsizV5Tk73XU8PH207eLDnrZFJ97rND/1ba0tNCq+TRjZgTRaJ13c9F+PEXbnTg+0NjS+7H28/6vP5fH2vPffQTP9g3FdGFte1+9qtNwVdLwH/UIn5HfzxQP3pPU2H/JmeEVLEtevP5HDfdXFNc4P5HRSUVW2tHOkf5pzcZliTr0LftUyPDA5srLRU9okMYk0Woe96wfcz+GLrGw/teqw8zueRrVStyfRdp9d3PT3cua3J3/Aadbo2pOraNX3XafRdTw93btsxWH+ovY7L1nakZE22hr7rOYGB1sdbRp96qY0Y25WSNdmawGQgMBmQub5r86Bn9ZrU+6672vc1bhmamJHC0kpv/ZPbi2Qi6QFK6lv3DjQ+arQVVT21/Y4SSbrbs6h6d8foMztqjAlZV/XUgr7ra0Yrqt59KND23BPeHRMzhaX31TU1LToB8Pe+PjIiO2pfnztQtbs7C39ZhviU9HhZQ981bCGH+q6toe8aaih5LZQ19F1DDfquY6PvGtkjh/quAcVyqO8ayHE5/ftkQA3WZEAD1mRAA9ZkQAPWZEAD1mRAA9s/x4ueakAynmR6qoFlYfs1WUTMkuq8lYX+oR65ek02e6rtE+bxrqbanq28oBAps/eaLGK5p3q8q6l2T795u7D0voaWXQ2VqcVnsM1olA5fc4WlaaeLhmpcxd7XrtPpqRaRqt3dPp/P5+tqKena9qO45ZdZiYZqXEXDtWtLPdULFVVu9cqg/0p1bMIS6fmDg22NL4u83GgYxrUF1jRU40az95o8L+We6oWmR3u7ekvrq8pFEpRILzpY0dzxmMhjHT6fL/abStBQjRvJ3muy9Z5qERHp31NrGIbxD41d5S90NpSLxCmRjnlwKTRU40bKijU5Ez3VInP75Nd2bezvPT63SY5VIh37oAU0VON6yYo1Oc2e6tmp8HxiF/ZUm3+WnENZfesu2bevyzx/vVIibRo53r9xnTvOQQviDT4xsfhqm9lQ7ZsX6wSehmp8JsNJtmY5eqoXKqlrbS3a19Q2OB2nRDrWQdl4R5X4/Qn2r9egoRrXjS2THJgMnBs7J3M91fOJTamn+ipF1bsPePtaXhyYLqre3VHvb6kxDG9jT+WVEumYB4u3PrU90PawYXibk22qjzlOSX3r3qKDjxrempZ+2Vgyf89DDXLwCa9hGDVNnafLymM1VL++o9aYw1ue5zZbNvLRU42cYoO+a2voqQYWsWWS6akGFrHl2XUC9FRDHxv0XQNYkg36rgEsC5IMaECSAQ1IMqABSQY0IMmABiQZ0IAkAxqQZEADkgxoQJIBDUgyoAFJBjQgyYAGJBnQgCQDGpBkQAOSDGhAkgENSDKgAUkGNCDJgAYkGdCAJAMakGRAA5IMaECSAQ1IMqABSQY0IMmABiQZ0IAkAxqQZEADkgxoQJIBDUgyoAFJBjQgyYAGJBnQgCQDGpBkQAOSDGhAkgENSDKgAUkGNCDJgAYkGdCAJAMakGRAA5IMaECSAQ1IMqABSQY0IMmABiQZ0IAkAxqQZEADkgxoQJIBDUgyoAFJBjQgyYAGJBnQgCQDGpBkQAOSDGhAkgENSDKgAUkGNCDJgAYkGdCAJAMakGRAA5IMaECSAQ1IMqABSQY0IMmABiQZ0IAkAxqQZEADkgxoQJIBDUgyoAFJBjQgyYAGJBnQgCQDGpBkQAOSDGhAkgENLCbZMWd5ZwPgWsnEzfqa7HQ6HQ5HNBq1PAKAJUWjUYfD4XQuEVXrSXY4HHl5eaFQyPIIAJYUCoXy8vKWPP+1fnadl5fncrmCwaC1EQAkIxgMulyuJcNsPclOp9PlcjkcjqmpKWuDAEhsamrK4XC4XC5zM5vgntY3upFIZHZ2NhwOh0KhaDTq8Xjy8/O5BgakLxqNhkKhYDDocDjy8/PNNTnxVjmtS1ZmmM08h8PhSCQSiUS4BgakwzzhNc95zQwvGWNJM8kiYkbXjLR5gyQD6TCTbF6KMm8sGWNJP8mmaDRqjkOMgfSZu9SUnrLBL4QBDXi2JqABSQY0IMmABiQZ0IAkAxqQZEADkgxoQJIBDUgyoAFJBjQgyYAGJBnQgCQDGpBkQAOSDGhAkgENSDKgAUkGNPh/+wWxgQo8GjcAAAAASUVORK5CYII="></p>
+<h3>Sort plugin</h3>
+<p>This plugin automatically arranges all sibling nodes according to a comparison config option function, which defaults to alphabetical order.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins5&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;sort&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3>State plugin</h3>
+<p>This plugin saves all opened and selected nodes in the user's browser, so when returning to the same tree the previous state will be restored.</p>
+<p>You can find all the state plugin config options in the API. Make a selection and refresh this page to see the change persisted.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins6&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s2">&quot;state&quot;</span> <span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;key&quot;</span> <span class="o">:</span> <span class="s2">&quot;demo2&quot;</span> <span class="p">},</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;state&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3>Types plugin</h3>
+<p>This plugin makes it possible to add predefined types for groups of nodes, which means to easily control nesting rules and icon for each group.</p>
+<p>To set a node's type you can use <code>set_type</code> or supply a <code>type</code> property with the node's data.</p>
+<p>You can find all the types plugin config options &amp; functions in the API.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins7&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s2">&quot;types&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;default&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;icon&quot;</span> <span class="o">:</span> <span class="s2">&quot;glyphicon glyphicon-flash&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;demo&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;icon&quot;</span> <span class="o">:</span> <span class="s2">&quot;glyphicon glyphicon-ok&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;types&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p><img alt="7" src="data:image/png;base64,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"></p>
+<h3>Unique plugin</h3>
+<p>Enforces that no nodes with the same name can coexist as siblings. This plugin has no options, it just prevents renaming and moving nodes to a parent, which already contains a node with the same name.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins8&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s2">&quot;core&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;check_callback&quot;</span> <span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;unique&quot;</span><span class="p">,</span> <span class="s2">&quot;dnd&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3>Wholerow plugin</h3>
+<p>Makes each node appear block level which makes selection easier. May cause slow down for large trees in old browsers.</p>
+<div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#plugins9&quot;</span><span class="p">).</span><span class="nx">jstree</span><span class="p">({</span>
+    <span class="s2">&quot;plugins&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;wholerow&quot;</span> <span class="p">]</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
