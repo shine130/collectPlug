@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+
+
+<link rel="stylesheet" href="style/github.css">
+</head>
+
+<body >
+<div id="content">
+# 事件管理
+### Backbone.Events模块API结构
+#### 示例：使用on方法监听默认事件
+
+**1.功能描述**
+
+构建一个名为`person`的模型类，在构建时，通过defaults设置对象的默认属性名称，使用on方法绑定对象默认属性的change事件。当重置对象默认属性值时触发该事件，并在浏览器的控制台中输出"对象的默认值发生了变化。"的字样。
+
+**2.实现代码**
+```javascript
+var person = Backbone.Model.extend({
+    defaults:{
+        name:"",
+        sex:""
+    }
+})
+
+var man = new person();
+man.on("change",function(){
+    console.log("对象的默认值发生了变化");
+})
+man.set("name:","名字");
+```
+**使用on方法监听属性事件**
+**绑定一次once方法**
+
+在Backbone中，除使用on方法可以绑定对象的事件之外，还可以使用once方法完成对象事件的绑定，只不过once方法绑定的事件只执行一次，之后即使触发也不执行。调用的格式如下。
+```javascript
+Obj.once(eventName,function,[context])
+```
+
+</div>
+<script src="../jquery.min.js"></script>
+<script type="text/javascript" src="marked-master/marked.min.js"></script>
+<script type="text/javascript" src="highlight.js"></script>
+<script type="text/javascript">
+var box = $('#content')
+var content = box.html();
+marked(content,{
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false
+},function(err,str){
+    if (err) throw err;
+    box.html(str);
+    hljs.initHighlightingOnLoad();
+});
+
+</script>
+
+</body>
+
+</html>
